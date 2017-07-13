@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="main">
+    {% for k in data %}
+        <div class="row"></div>
+            <article>
+                <h2><a href="{{ path('blog_post', {slug: k.slug}) }}">{{ k.title }}</a></h2>
+                <p class="">
+                    {{ k.content|slice(0,500) }}
+                </p>
+                <p class="mdata pull-right">
+                    {{ k.users.username }} - {{ k.createdAt|date }}
+                </p>
+            </article>
+    {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

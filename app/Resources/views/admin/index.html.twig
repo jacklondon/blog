@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Kullanıcı</th>
+            <th>Tarih</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for k in data %}
+            <tr>
+                <td>{{ k.title }}</td>
+                <td>{{ k.users.username }}</td>
+                <td>{{ k.createdAt|date }}</td>
+                <td><a href="{{ path('edit_content',{id:k.id}) }}" class="btn btn-block btn-default">Düzenle</a></td>
+                <td><a href="{{ path('delete_content',{id:k.id}) }}" class="btn btn-block btn-danger">Sil</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <p>
+        <a href="{{ path("add_content") }}" class="btn btn-lg btn-block btn-success">Blog Ekle</a>
+    </p>
+{% endblock %}
