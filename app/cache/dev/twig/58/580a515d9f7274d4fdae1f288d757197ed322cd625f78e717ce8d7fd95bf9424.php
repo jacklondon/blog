@@ -16,8 +16,8 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_18bddd1f6e81c35999984bff730ec05f443a62a98c450fc9c14be4dd23c72dd6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_18bddd1f6e81c35999984bff730ec05f443a62a98c450fc9c14be4dd23c72dd6->enter($__internal_18bddd1f6e81c35999984bff730ec05f443a62a98c450fc9c14be4dd23c72dd6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
+        $__internal_5335674408c49f85904dbdec5c1c09200e06bf9a8635e8de266e2d1b949afdd7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5335674408c49f85904dbdec5c1c09200e06bf9a8635e8de266e2d1b949afdd7->enter($__internal_5335674408c49f85904dbdec5c1c09200e06bf9a8635e8de266e2d1b949afdd7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -30,15 +30,11 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
         echo "\" />
         <link rel=\"stylesheet\" href=\"";
         // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/bootstrap/dist/css/bootstrap.css"), "html", null, true);
-        echo "\"/>
-        <link rel=\"stylesheet\" href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/css/main.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/css/bundled.min.css"), "html", null, true);
         echo "\"/>
         <script href=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/jquery/dist/jquery.min.js"), "html", null, true);
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/js/bundled.min.js"), "html", null, true);
         echo "\"></script>
     </head>
     <body>
@@ -46,7 +42,7 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
             <div class=\"navbar navbar-default navbar-static-top\">
                 <div class=\"container\">
                     <div class=\"navbar-header\"><a href=\"";
-        // line 14
+        // line 13
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
         echo "\">BLOG</a></div>
                     <div class=\"navbar-collapse\">
@@ -63,24 +59,24 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
 
         <div class=\"container body-container\">
             ";
-        // line 28
+        // line 27
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 29
+            // line 28
             echo "                ";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("layout.logged_in_as", array("%username%" => $this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "user", array()), "username", array())), "FOSUserBundle"), "html", null, true);
             echo " |
                 <a href=\"";
-            // line 30
+            // line 29
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_logout");
             echo "\">
                     ";
-            // line 31
+            // line 30
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
             echo "
                 </a>
             ";
         } else {
-            // line 34
+            // line 33
             echo "                <a href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login");
             echo "\">";
@@ -88,28 +84,28 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
             echo "</a>
             ";
         }
-        // line 36
+        // line 35
         echo "
 
             ";
-        // line 38
+        // line 37
         if ($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 39
+            // line 38
             echo "                ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 40
+                // line 39
                 echo "                    ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 41
+                    // line 40
                     echo "                        <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
                             ";
-                    // line 42
+                    // line 41
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo "
                         </div>
@@ -118,22 +114,22 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 45
+                // line 44
                 echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 46
+            // line 45
             echo "            ";
         }
-        // line 47
+        // line 46
         echo "
             <div>
                 ";
-        // line 49
+        // line 48
         $this->displayBlock('fos_user_content', $context, $blocks);
-        // line 51
+        // line 50
         echo "            </div>
         </div>
 
@@ -141,20 +137,20 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
 </html>
 ";
         
-        $__internal_18bddd1f6e81c35999984bff730ec05f443a62a98c450fc9c14be4dd23c72dd6->leave($__internal_18bddd1f6e81c35999984bff730ec05f443a62a98c450fc9c14be4dd23c72dd6_prof);
+        $__internal_5335674408c49f85904dbdec5c1c09200e06bf9a8635e8de266e2d1b949afdd7->leave($__internal_5335674408c49f85904dbdec5c1c09200e06bf9a8635e8de266e2d1b949afdd7_prof);
 
     }
 
-    // line 49
+    // line 48
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_40ef61abe4077cbad8004ec371ccebdb8c88f5f438b168fe41aa028138f909ac = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_40ef61abe4077cbad8004ec371ccebdb8c88f5f438b168fe41aa028138f909ac->enter($__internal_40ef61abe4077cbad8004ec371ccebdb8c88f5f438b168fe41aa028138f909ac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_f1d464f95b7c49302b6966fb6fdfa0bbe69fd3a90648da89b8b0d0f45a7d70b0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f1d464f95b7c49302b6966fb6fdfa0bbe69fd3a90648da89b8b0d0f45a7d70b0->enter($__internal_f1d464f95b7c49302b6966fb6fdfa0bbe69fd3a90648da89b8b0d0f45a7d70b0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
-        // line 50
+        // line 49
         echo "                ";
         
-        $__internal_40ef61abe4077cbad8004ec371ccebdb8c88f5f438b168fe41aa028138f909ac->leave($__internal_40ef61abe4077cbad8004ec371ccebdb8c88f5f438b168fe41aa028138f909ac_prof);
+        $__internal_f1d464f95b7c49302b6966fb6fdfa0bbe69fd3a90648da89b8b0d0f45a7d70b0->leave($__internal_f1d464f95b7c49302b6966fb6fdfa0bbe69fd3a90648da89b8b0d0f45a7d70b0_prof);
 
     }
 
@@ -170,7 +166,7 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
 
     public function getDebugInfo()
     {
-        return array (  155 => 50,  149 => 49,  137 => 51,  135 => 49,  131 => 47,  128 => 46,  122 => 45,  113 => 42,  108 => 41,  103 => 40,  98 => 39,  96 => 38,  92 => 36,  84 => 34,  78 => 31,  74 => 30,  69 => 29,  67 => 28,  50 => 14,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  151 => 49,  145 => 48,  133 => 50,  131 => 48,  127 => 46,  124 => 45,  118 => 44,  109 => 41,  104 => 40,  99 => 39,  94 => 38,  92 => 37,  88 => 35,  80 => 33,  74 => 30,  70 => 29,  65 => 28,  63 => 27,  46 => 13,  37 => 7,  33 => 6,  29 => 5,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -188,9 +184,8 @@ class __TwigTemplate_be8e544a295dfc145b11ce6e36b97137cf89a82f23b80ecea84d0607e94
     <head>
         <meta charset=\"UTF-8\" />
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
-        <link rel=\"stylesheet\" href=\"{{ asset('assets/bootstrap/dist/css/bootstrap.css') }}\"/>
-        <link rel=\"stylesheet\" href=\"{{ asset('assets/css/main.css') }}\"/>
-        <script href=\"{{ asset('assets/jquery/dist/jquery.min.js') }}\"></script>
+        <link rel=\"stylesheet\" href=\"{{ asset('assets/css/bundled.min.css') }}\"/>
+        <script href=\"{{ asset('assets/js/bundled.min.js') }}\"></script>
     </head>
     <body>
         <header>
